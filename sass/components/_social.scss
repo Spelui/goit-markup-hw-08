@@ -1,0 +1,33 @@
+.social{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 16px;
+
+  &__item{
+    &:not(:last-child){
+      margin-right: 10px;
+    }
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--white);
+    fill: var(--icon);
+    transition: 
+    background-color var(--ms) var(--cubik), 
+    border-radius var(--ms) var(--cubik), 
+    fill var(--ms) var(--cubik);
+
+    &:hover,
+    &:focus{
+      background-color: var(--text-accent);
+      border-radius: 50%;
+      fill: var(--white);
+    }
+  }
+}

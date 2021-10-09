@@ -1,0 +1,130 @@
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  
+  display: flex;
+  flex-direction: column;
+  // min-width: 528px;
+  // min-height: 581px;
+  padding: 40px;
+
+  background-color: var(--white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--ms) var(--cubik),
+  opacity var(--ms) var(--cubik);
+
+  @media screen and (max-width: 767px) {
+    min-width: 450px;
+  }
+
+  &__button{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--white);
+    cursor: pointer;
+  
+    transition: border-color var(--ms) var(--cubik);
+
+    &:hover,
+    &:focus{
+      border-color: var(--text-accent);
+
+      .modal__close{
+        fill: var(--text-accent);
+        transform: rotateZ(180deg) scale(1.4);
+      }
+    }
+  }
+
+  &__close{
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    transform: rotateZ(0) scale(1);
+    transition: transform var(--ms) var(--cubik),
+    fill var(--ms) var(--cubik);
+  }
+
+  &__title{
+    font-size: 20px;
+    line-height: calc(23 / 20);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__field{
+    position: relative;
+    margin-bottom: 10px;
+  
+    color: var(--text-color);
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+  }
+
+  &__input{
+    display: block;
+    margin-top: 4px;
+    padding: 11px 12px 11px 45px;
+    width: 100%;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+
+    &:focus{
+      border-color: var(--text-accent);
+
+      ~ .modal__icon{
+        fill: var(--text-accent);
+      }
+    }
+  }
+
+  &__icon{
+    position: absolute;
+    top: 50%;
+    left: 12px;
+  }
+
+  &__textarea{
+    resize: none;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    height: 120px;
+
+    &::placeholder{
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+
+  &__send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  &__btn{
+    padding: 10px 55px;
+    border: 2px solid var(--text-accent);
+  }
+
+}
+
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+}

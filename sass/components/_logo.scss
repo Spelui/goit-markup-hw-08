@@ -1,0 +1,35 @@
+.logo{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--title-text);
+  text-decoration: none;
+
+  &__accent{
+    color: var(--text-accent);
+  }
+
+  &__footer{
+    display: block;
+    margin-bottom: 20px;
+  
+    color: var(--white);
+  }
+
+  &--mobile{
+    @media screen and (max-width: 767px) {
+      padding: 16px 0;
+    }
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &--tablet{
+    @media screen and (max-width: 767px){
+      display: none;
+    }
+  }
+
+}

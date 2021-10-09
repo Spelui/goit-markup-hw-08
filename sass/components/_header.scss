@@ -1,0 +1,133 @@
+.header{
+  border-bottom: 1px solid #ECECEC;
+
+  &__container{
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__whole {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+      position: fixed;
+      flex-direction: column;
+      top: 100%;
+      top: 0;
+      left: 0;
+      padding: 48px 40px;
+      min-width: 100%;
+      min-height: 100%;
+      background-color: var(--white);
+
+      transform: translateX(100%);
+      transition: transform var(--ms) var(--cubik);
+
+    }
+  }
+
+  // &__nav{
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  &__adress{
+    // margin-left: auto;
+
+    @media screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: auto;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__icon{
+    fill: currentColor;
+    margin-right: 10px;
+    width: 16px;
+    height: 12px;
+    display: none;
+
+    &--size{
+      width: 10px;
+      height: 16px;
+    }
+  }
+
+  &__social{
+    @media screen and (min-width: 768px){
+      display: none;
+    }
+  }
+
+  &__mobile{
+    @media screen and (max-width: 767px){
+      font-size: 18px;
+      line-height: calc(22 / 18);
+      color: var(--text-accent);
+      text-decoration: none;
+
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.header__whole.is-open {
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.menu-togle{
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus .icon-set,
+  &:hover .icon-set{
+    fill: var(--text-accent);
+  }
+}
+
+.icon-set{
+  transition: fill var(--ms) var(--cubik);
+}
+
+.menu{
+  // display: flex;
+  // align-items: center;
+  list-style: none;
+  // margin-left: 93px;
+
+  &__item:not(:last-child){
+    margin-right: 50px;
+  }
+
+  &__link{
+
+    &--active{
+      // position: relative;
+      color: var(--text-accent);
+  
+      // &::after{
+      //   content: "";
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: 0;
+      //   width: 100%;
+      //   height: 4px;
+      //   border-radius: 2px;
+      //   background-color: var(--text-accent);
+      // }
+    }
+  }
+}
