@@ -6,19 +6,19 @@
   background-color: var(--hero-bg);
   text-align: center;
   padding: 118px 0;
-  // padding: 200px 0;
-  // max-width: 1600px;
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (min-width: 1199px) {
+  @media screen and (min-width: 1200px) {
+    padding: 200px 0;
+    max-width: 1600px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/hero.jpg);
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx){
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/hero2x.jpg);
     }
   }
 
-  @media screen and (min-width:767px){
+  @media screen and (min-width:768px){
     max-width: 1600px;
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx){
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/hero-t2x.jpg);
@@ -39,15 +39,15 @@
     margin-bottom: 30px;
   
     font-weight: 900;
-    // font-size: 44px;
-    // line-height: 1.36;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--white);
+    font-size: 26px;
+    line-height: calc(42 / 26);
 
-    @media screen and (max-width: 767px) {
-      font-size: 26px;
-      line-height: calc(42 / 26);
+    @media screen and (min-width: 1200px){
+      font-size: 44px;
+      line-height: 1.36;
     }
   }
 

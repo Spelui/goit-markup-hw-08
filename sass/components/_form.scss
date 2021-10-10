@@ -1,10 +1,13 @@
 .form{
-  // display: flex;
-  // align-items: flex-end;
 
-  // &__right{
-  //   margin-right: 12px;
-  // }
+  @media screen and (min-width: 1200px){
+    display: flex;
+    align-items: flex-end;
+
+    &__right{
+      margin-right: 12px;
+    }
+  }
 
   &__title{
     display: flex;
@@ -16,7 +19,7 @@
   }
 
   &__input{
-    // min-width: 358px;
+    
     margin-top: 20px;
     padding: 15px 16px;
     background-color: transparent;
@@ -28,6 +31,18 @@
     line-height: calc(20 / 16);
     outline: none;
     color: var(--text-accent);
+
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px){
+      min-width: 450px;
+    }
+
+    @media screen and (min-width: 1200px){
+      min-width: 358px;
+    }
 
     &:focus-visible{
       border-color: var(--text-accent);

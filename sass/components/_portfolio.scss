@@ -1,8 +1,6 @@
 .filter{
   display: flex;
-  // justify-content: center;
   flex-wrap: wrap;
-  // margin-bottom: 50px;
   margin-bottom: 40px;
   list-style: none;
 
@@ -20,6 +18,13 @@
     margin-bottom: 30px;
   }
 
+  @media screen and (min-width: 1200px){
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  
+
   &__btn{
     
     @media screen and (max-width: 767px) {
@@ -33,17 +38,17 @@
   }
 }
 
-// .filter__btn + .filter__btn{
-//   margin-left: 8px;
-// }
+@media screen and (min-width: 1200px) {
+  .filter__btn + .filter__btn{
+    margin-left: 8px;
+  }
+}
 
 .portfolio{
   
   &__list{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     list-style: none;
 
     @media screen and (min-width: 768px){
@@ -61,10 +66,23 @@
     background: var(--white);
     transition: box-shadow var(--ms) var(--cubik);
 
+    @media screen and (max-width: 767px) {
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+
     @media screen and (min-width: 768px){
+      display: flex;
+      align-items: stretch;
       flex-basis: calc(100% / 2 - 30px);
       margin-top: 30px;
       margin-left: 30px;
+      
+    }
+
+    @media screen and (min-width: 1200px){
+      flex-basis: calc(100% / 3 - 30px);
     }
 
     &:hover,
@@ -81,7 +99,7 @@
 
   &__link{
     display: block;
-    
+    border: 1px solid var(--filter-card);
     text-decoration: none;
   }
 
@@ -94,6 +112,14 @@
     display: block;
     max-width: 100%;
     height: auto;
+
+    @media screen and (max-width: 767px){
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 370px;
+    }
   }
 
   &__active{
@@ -118,7 +144,6 @@
 
   &__description{
     padding: 20px 24px;
-    border: 1px solid var(--filter-card);
     border-top: none;
   }
 

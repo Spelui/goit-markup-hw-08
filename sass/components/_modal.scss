@@ -5,8 +5,6 @@
   
   display: flex;
   flex-direction: column;
-  // min-width: 528px;
-  // min-height: 581px;
   padding: 40px;
 
   background-color: var(--white);
@@ -18,9 +16,16 @@
 
   transition: transform var(--ms) var(--cubik),
   opacity var(--ms) var(--cubik);
+  min-width: 450px;
 
-  @media screen and (max-width: 767px) {
-    min-width: 450px;
+  @media screen and (max-width:479px) {
+    min-width: 400px;
+    padding: 15px;
+  }
+
+  @media screen and (min-width:1200px) {
+    min-width: 528px;
+    min-height: 581px;
   }
 
   &__button{

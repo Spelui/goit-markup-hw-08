@@ -28,21 +28,35 @@
       transition: transform var(--ms) var(--cubik);
 
     }
+
+    @media screen and (min-width: 768px){
+      align-items: center;
+    }
   }
 
-  // &__nav{
-  //   display: flex;
-  //   align-items: center;
-  // }
+  &__nav{
+
+    @media screen and (min-width: 768px){
+      display: flex;
+      align-items: center;
+    }
+  }
 
   &__adress{
-    // margin-left: auto;
+    display: flex;
 
     @media screen and (max-width: 767px) {
-      display: flex;
       flex-direction: column-reverse;
       margin-top: auto;
       margin-bottom: 64px;
+    }
+    @media screen and (min-width: 768px){
+      flex-direction: column;
+      // align-items: center;
+      margin-left: auto;
+    }
+    @media screen and (min-width: 1200px){
+      flex-direction: row;
     }
   }
 
@@ -51,7 +65,10 @@
     margin-right: 10px;
     width: 16px;
     height: 12px;
-    display: none;
+    
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
 
     &--size{
       width: 10px;
@@ -96,6 +113,10 @@
   &:hover .icon-set{
     fill: var(--text-accent);
   }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .icon-set{
@@ -103,31 +124,54 @@
 }
 
 .menu{
-  // display: flex;
-  // align-items: center;
   list-style: none;
-  // margin-left: 93px;
+  
 
-  &__item:not(:last-child){
-    margin-right: 50px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    margin-left: 93px;
+  }
+
+  &__item{
+
+    @media screen and (max-width: 767px) {
+      &:not(:last-child){
+        margin-bottom: 32px;
+      }
+    }
+
+    @media screen and (min-width: 768px){
+      &:not(:last-child){
+        margin-right: 50px;
+      }
+    }
   }
 
   &__link{
 
+    @media screen and (min-width: 768px) {
+      display: block;
+      padding: 32px 0;
+    }
+
     &--active{
-      // position: relative;
       color: var(--text-accent);
-  
-      // &::after{
-      //   content: "";
-      //   position: absolute;
-      //   left: 0;
-      //   bottom: 0;
-      //   width: 100%;
-      //   height: 4px;
-      //   border-radius: 2px;
-      //   background-color: var(--text-accent);
-      // }
+
+      @media screen and (min-width: 768px){
+        position: relative;
+
+        &::after{
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 4px;
+          border-radius: 2px;
+          background-color: var(--text-accent);
+        }
+      }
     }
   }
 }
